@@ -32,6 +32,7 @@
 					// 기밀 채용
 					$(".hire-percent").text("SSR 3.5% SR 15% R 81.5% N 0%");
 					$(".hire-pickup-char").text("얼터그레시브 서윤");
+					$(".goods-type").text("기채권");
 					
 					// 천장 표기
 					$(".ceiling").show();
@@ -94,6 +95,7 @@
 					// 1주년 기념 채용
 					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
 					$(".hire-pickup-char").text("없음");
+					$(".goods-type").text("쿼츠");
 					
 					// 천장 숨김
 					$(".ceiling").hide();
@@ -136,6 +138,7 @@
 					// 하랍 픽업 (임시)
 					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
 					$(".hire-pickup-char").text("하랍");
+					$(".goods-type").text("쿼츠");
 					
 					// 천장 표기
 					$(".ceiling").show();
@@ -202,6 +205,7 @@
 					// 오퍼레이터 수시채용
 					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
 					$(".hire-pickup-char").text("없음");
+					$(".goods-type").text("쿼츠");
 					
 					// 천장 숨김
 					$(".ceiling").hide();
@@ -240,7 +244,14 @@
 			// 1회 채용
 			$(".hire-1").click(function(){
 				hireCount += 1;
-				useQuartz += 150;
+				
+				var changedId = $('input[name="hire-type-radio"]:checked').attr('id');
+				
+				if(changedId == 'hidden-hire'){
+					useQuartz += 20;
+				}else{
+					useQuartz += 150;
+				}
 				
 				$(".hire-result ul").empty();
 				gacha();
@@ -250,7 +261,14 @@
 			// 10회 채용
 			$(".hire-10").click(function(){
 				hireCount += 10;
-				useQuartz += 1500;
+				
+				var changedId = $('input[name="hire-type-radio"]:checked').attr('id');
+				
+				if(changedId == 'hidden-hire'){
+					useQuartz += 200;
+				}else{
+					useQuartz += 1500;
+				}
 				
 				$(".hire-result ul").empty();
 				for(var i=0; i<10; i++){
@@ -288,6 +306,7 @@
 				updateUseGoods();
 				updateGetChar();
 				$(".hire-result ul").empty();
+				$(".hire-ssr-list").empty();
 			}
 			
 			// 채용 1회
@@ -363,6 +382,11 @@
 				innerHTML += "</li>";
 				
 				$(".hire-result ul").append(innerHTML);
+				
+				if(getRarity == 'ssr' || getRarity == 'pickup'){
+					updateHireResult(getChar);
+				}
+				
 				updateGetChar();
 			}
 			
@@ -386,6 +410,25 @@
 					$(".sr-count").text(numberWithComma(srCount) + "(" + (srCount/hireCount*100).toFixed(1)  + "%)");
 					$(".r-count").text(numberWithComma(rCount) + "(" + (rCount/hireCount*100).toFixed(1)  + "%)");
 					$(".n-count").text(numberWithComma(nCount) + "(" + (nCount/hireCount*100).toFixed(1)  + "%)");
+				}
+			}
+			
+			// 채용 결과 업데이트
+			function updateHireResult(charName){
+				var dupCheck = $(".hire-ssr-list li:contains('"+charName+"')");
+				
+				if(dupCheck.length > 0){
+					var split = dupCheck.text().split('(');
+					
+					if(split.length == 1){
+						$(dupCheck).text(dupCheck.text() + " (2)");
+					}else{
+						split[1] = split[1].slice(0, -1);
+						
+						$(dupCheck).text(split[0] + " (" + (parseInt(split[1])+1) +")")
+					}
+				}else{
+					$(".hire-ssr-list").append("<li>"+charName+"</li>") 
 				}
 			}
 			
