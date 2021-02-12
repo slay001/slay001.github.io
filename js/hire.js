@@ -132,7 +132,7 @@
 					for(var i=0; i<13; i++){
 						nPool.push('대충 N');
 					}
-				}else if(changedId = 'harap-hire'){
+				}else if(changedId == 'harap-hire'){
 					// 하랍 픽업 (임시)
 					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
 					$(".hire-pickup-char").text("하랍");
