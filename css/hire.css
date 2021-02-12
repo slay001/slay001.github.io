@@ -12,6 +12,7 @@
 	min-width:70%;
 	max-width:70%;
 	min-height:206px;
+	max-height:206px;
 	margin:0 auto;
 	margin-top:10px;
 	display:table;
@@ -30,5 +31,4 @@
 	margin:1px;
 	border:1px solid black;
 	border-radius: 2px;
-	padding:2px;
 }

@@ -49,6 +49,9 @@ tr, td, th {padding: 0;border: 0;}
 		</div>
 		
 		<div class="btn-group hire-type" role="group" aria-label="test">
+			<input type="radio" class="btn-check" name="hire-type-radio" id="harap-hire" autocomplete="off">
+			<label class="btn btn-outline-primary" for="harap-hire">하랍 픽업 채용</label>
+
 			<input type="radio" class="btn-check" name="hire-type-radio" id="hire-type-radio1" autocomplete="off">
 			<label class="btn btn-outline-primary" for="hire-type-radio1">기밀 채용</label>
 		
@@ -68,6 +71,7 @@ tr, td, th {padding: 0;border: 0;}
 			<p>픽업캐릭터 : <span class="hire-pickup-char">없음</span></p>
 			<p>채용 횟수 <span class="hire-count">0</span> / 소모 쿼츠 <span class="hire-quartz">0</span></p>
 			<p>획득 현황 SSR <span class="ssr-count">0</span> SR <span class="sr-count">0</span> R <span class="r-count">0</span> N <span class="n-count">0</span></p>
+			<p class="ceiling" style="display:none;">확정 채용까지 <span class="ceiling-count">150</span>회</p>
 			<p>
 				<button type="button" class="btn btn-primary hire-1">1회 채용</button>
 				<button type="button" class="btn btn-primary hire-10">10회 채용</button>

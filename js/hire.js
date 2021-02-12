@@ -7,6 +7,9 @@
 			var rCount = 0;
 			var nCount = 0;
 			
+			// 천장
+			var ceilingCount = 150;
+			
 			// 레어도 풀
 			var ssrPool = [];
 			var srPool = [];
@@ -25,10 +28,13 @@
 				charPoolReset();
 				gachaReset();
 				
-				if(changedId == 'hire-type-radio1'){
+				if(changedId == 'hidden-hire'){
 					// 기밀 채용
 					$(".hire-percent").text("SSR 3.5% SR 15% R 81.5% N 0%");
 					$(".hire-pickup-char").text("얼터그레시브 서윤");
+					
+					// 천장 표기
+					$(".ceiling").show();
 					
 					ssrPercent = 3.5;
 					srPercent = 15;
@@ -84,10 +90,13 @@
 						rPool.push('대충 R');
 					}
 					
-				}else if(changedId == 'hire-type-radio2'){
+				}else if(changedId == '1staniv-hire'){
 					// 1주년 기념 채용
 					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
-					$(".hire-pickup-char").text("없음 (상시채용)");
+					$(".hire-pickup-char").text("없음");
+					
+					// 천장 숨김
+					$(".ceiling").hide();
 					
 					ssrPercent = 3.5;
 					srPercent = 15;
@@ -123,10 +132,79 @@
 					for(var i=0; i<13; i++){
 						nPool.push('대충 N');
 					}
+				}else if(changedId = 'harap-hire'){
+					// 하랍 픽업 (임시)
+					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
+					$(".hire-pickup-char").text("하랍");
+					
+					// 천장 표기
+					$(".ceiling").show();
+					
+					ssrPercent = 3.5;
+					srPercent = 15;
+					rPercent = 39;
+					nPercent = 42.5;
+					
+					ssrPool.push('루미');
+					ssrPool.push('이수연');
+					ssrPool.push('에스테로사 드 슈발리에');
+					ssrPool.push('나나하라 치후유');
+					ssrPool.push('주시영');
+					ssrPool.push('옌 싱 란체스터');
+					ssrPool.push('알렉스');
+					ssrPool.push('샤오린');
+					ssrPool.push('하야미 사나에');
+					ssrPool.push('카린 웡');
+					ssrPool.push('에델 마이트너');
+					ssrPool.push('류드밀라');
+					ssrPool.push('마리아 안토노프');
+					ssrPool.push('이디스 트윈즈');
+					ssrPool.push('나나하라 치나츠');
+					ssrPool.push('양하림');
+					ssrPool.push('레지나 맥크레디');
+					ssrPool.push('릴리');
+					ssrPool.push('서윤');
+					ssrPool.push('가은');
+					ssrPool.push('카일 웡');
+					ssrPool.push('나유빈');
+					ssrPool.push('로자리아 르 프리데');
+					ssrPool.push('프레데릭 도마');
+					ssrPool.push('엘리자베스 펜드래건');
+					ssrPool.push('신지아');
+					ssrPool.push('이유미');
+					ssrPool.push('도미닉 킹 레지날드');
+					ssrPool.push('터미네이터');
+					ssrPool.push('관리국 검사');
+					ssrPool.push('베로니카');
+					ssrPool.push('강소영');
+					ssrPool.push('스트롱홀드');
+					ssrPool.push('ATAC-130 건쉽');
+					ssrPool.push('타이탄');
+					ssrPool.push('이프리트');
+					ssrPool.push('ATL-1 링컨');
+					ssrPool.push('에스타크');
+					ssrPool.push('간나쓰선');
+					ssrPool.push('야누스');
+					ssrPool.push('시그마');
+					
+					for(var i=0; i<37; i++){
+						srPool.push('대충 SR');
+					}
+					
+					for(var i=0; i<30; i++){
+						rPool.push('대충 R');
+					}
+					
+					for(var i=0; i<13; i++){
+						nPool.push('대충 N');
+					}
 				}else{
 					// 오퍼레이터 수시채용
 					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
-					$(".hire-pickup-char").text("없음 (상시채용)");
+					$(".hire-pickup-char").text("없음");
+					
+					// 천장 숨김
+					$(".ceiling").hide();
 					
 					ssrPercent = 2;
 					srPercent = 8;
@@ -150,6 +228,7 @@
 					nPool.push('아카데미 상급생');
 					nPool.push('보급형 오토마타');
 				}
+				
 			})
 			
 			// navbar active설정
@@ -163,9 +242,9 @@
 				hireCount += 1;
 				useQuartz += 150;
 				
-				updateUseGoods();
 				$(".hire-result ul").empty();
 				gacha();
+				updateUseGoods();
 			})
 			
 			// 10회 채용
@@ -173,12 +252,12 @@
 				hireCount += 10;
 				useQuartz += 1500;
 				
-				updateUseGoods();
-				
 				$(".hire-result ul").empty();
 				for(var i=0; i<10; i++){
 					gacha();
 				}
+				
+				updateUseGoods();
 			})
 			
 			// 초기화
@@ -204,6 +283,7 @@
 				srCount = 0;
 				rCount = 0;
 				nCount = 0;
+				ceilingCount = 150;
 				
 				updateUseGoods();
 				updateGetChar();
@@ -215,20 +295,26 @@
 				var randPercent = parseFloat((Math.random()*100).toFixed(1));
 				var selectedPool = null;
 				var isPickup = false;
+				var isCeiling = false;
 				var pickupChar = "";
 				var getRarity = "";
 				
-				if(randPercent <= ssrPercent){
+				// 현재 채용 타입
+				var nowHireTypeId = $('input[name="hire-type-radio"]:checked').attr('id');
+				
+				if(randPercent <= ssrPercent || ceilingCount <= 1){
 					
-					// 기밀채용일 경우 
-					var nowHireTypeId = $('input[name="hire-type-radio"]:checked').attr('id');
-					
-					if(nowHireTypeId == 'hire-type-radio1'){
+					// 기밀/픽업채용일 경우 
+					if(nowHireTypeId == 'hidden-hire' || nowHireTypeId == 'harap-hire'){
 						var pickupPercent = parseFloat((Math.random()*3.5).toFixed(1));
 						
-						if(pickupPercent <= 1){
+						if(pickupPercent <= 1 || ceilingCount <= 1){
 							isPickup = true;
-							pickupChar = "얼터그레시브 서윤";
+							pickupChar = $(".hire-pickup-char").text();
+							
+							if(ceilingCount <= 1){
+								isCeiling = true;
+							}
 						}
 					}
 					
@@ -252,16 +338,28 @@
 				var getChar = "";
 				
 				if(isPickup){
+					getRarity = "pickup";
 					getChar = pickupChar;
+					
+					// 천장 횟수 초기화
+					ceilingCount = 150;
 				}else{
 					var pick = Math.floor(Math.random()*selectedPool.length);
 					getChar = selectedPool[pick];
+					
+					// 천장 횟수 갱신
+					if(nowHireTypeId == 'hidden-hire' || nowHireTypeId == 'harap-hire'){
+						ceilingCount--;
+					}
 				}
 				
 				var innerHTML = "";
 				innerHTML += "<li class='rarity-"+getRarity+"'>";
 				innerHTML += 	"<div style='border:1px solid black;'>[대충 얼굴]</div>";
 				innerHTML += 	"<div><span>"+getChar+"</span></div>";
+				if(isCeiling){
+				innerHTML += 	"<div><span>(천장)</span></div>";
+				}
 				innerHTML += "</li>";
 				
 				$(".hire-result ul").append(innerHTML);
@@ -272,6 +370,7 @@
 			function updateUseGoods(){
 				$(".hire-count").text(numberWithComma(hireCount));
 				$(".hire-quartz").text(numberWithComma(useQuartz));
+				$(".ceiling-count").text(ceilingCount);
 			}
 			
 			// 얻은 레어리티 업데이트

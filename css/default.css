@@ -29,6 +29,10 @@
 	font-weight:bold;
 	color:burlywood;
 }
+.rarity-pickup{
+	font-weight:bold;
+	color:red;
+}
 
 .footer{
 	margin-top:40px;
