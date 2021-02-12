@@ -9,6 +9,7 @@
 
 .hire-result{
 	border:1px solid black;
+	min-width:70%;
 	max-width:70%;
 	min-height:400px;
 	max-height:400px;
