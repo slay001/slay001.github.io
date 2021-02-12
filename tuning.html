@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+<meta http-equiv="Cache-Control" content="No-Cache" /> 
+<meta http-equiv="pragma" content="No-cache" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="expires" content="0" />
+<title>COUNTER : SITE</title>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/default.css" rel="stylesheet">
+<link href="./css/tuning.css" rel="stylesheet">
+
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+body{margin:0; padding:0;}
+table {border-spacing: 0;padding: 0;border-collapse: separate;border: 0;}
+tr, td, th {padding: 0;border: 0;}
+</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">C O U N T E <span class="flip_H">R</span> : S I T E</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			  <ul class="navbar-nav me-auto mb-2 mb-md-0">
+				<li class="nav-item">
+				  <a class="nav-link" href="./index.html">채용 시뮬레이터</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link active" href="./tuning.html">튜닝 시뮬레이터</a>
+				</li>
+			  </ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<div class="starter-template text-center py-5 px-3">
+			<h1></h1>
+		</div>
+		
+		<div class="btn-group equip-type" role="group">
+			<input type="radio" class="btn-check" name="equip-type-radio" id="equip-wep" autocomplete="off">
+			<label class="btn btn-outline-primary" for="equip-wep">무기</label>
+			
+			<input type="radio" class="btn-check" name="equip-type-radio" id="equip-def" autocomplete="off">
+			<label class="btn btn-outline-primary" for="equip-def">방어구</label>
+			
+			<input type="radio" class="btn-check" name="equip-type-radio" id="equip-sub1" autocomplete="off">
+			<label class="btn btn-outline-primary" for="equip-sub1">보조 장비1</label>
+			
+			<input type="radio" class="btn-check" name="equip-type-radio" id="equip-sub2" autocomplete="off">
+			<label class="btn btn-outline-primary" for="equip-sub2">보조 장비2</label>
+		</div>
+		
+		<div class="equip-description">
+			<p>※실제 게임에선 대적자 세트의 세트 옵션을 변경할 수 없습니다.</p>
+			<p>※1회 소비량 : 옵변 튜바 13 크레딧 50,400 / 셋변 셋바 8 크레딧 216,000</p>
+			<br>
+			<p>옵션 변경 횟수 <span class="tuning-count">0</span> / 소모 옵션 바이너리 <span class="tuning-binary-count">0</span> / 소모 크레딧 <span class="tuning-credit">0</span></p>
+			<p>세트 변경 횟수 <span class="set-count">0</span> / 소모 세트 바이너리 <span class="set-binary-count">0</span> / 소모 크레딧 <span class="set-credit">0</span></p>
+		</div>
+		
+		<div class="equip-content">
+			<table class="equip-table equip-before">
+				<tbody>
+					<tr>
+						<td>[여기에 아이콘 입력]</td>
+					</tr>
+					<tr>
+						<td>대적자의 핸즈</td>
+					</tr>
+					<tr>
+						<td>공격력 +110</td>
+					</tr>
+					<tr>
+						<td>vs지상 피해 4.9%</td>
+					</tr>
+					<tr>
+						<td>vs공중 피해 8.9%</td>
+					</tr>
+					<tr>
+						<td>스킬충전속도</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<span class="equip-mid-arrow">▶</span>
+			
+			<table class="equip-table equip-after">
+				<tbody>
+					<tr>
+						<td>[여기에 아이콘 입력]</td>
+					</tr>
+					<tr>
+						<td>대적자의 핸즈</td>
+					</tr>
+					<tr>
+						<td>공격력 +110</td>
+					</tr>
+					<tr>
+						<td>vs지상 피해 4.9%</td>
+					</tr>
+					<tr>
+						<td>vs공중 피해 8.9%</td>
+					</tr>
+					<tr>
+						<td>스킬충전속도</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="equip-description">
+			<p>
+				<!-- <button type="button" class="btn btn-primary change-option1">옵션1 변경</button> -->
+				<button type="button" class="btn btn-primary change-option2">옵션2 변경</button>
+				<button type="button" class="btn btn-primary change-set">세트 변경</button>
+				<button type="button" class="btn btn-danger change-reset">초기화</button>
+			</p>
+		</div>
+		
+		<footer class="footer">
+			<p>Copyright © 2021, 슬레이</p>
+			<a href="https://arca.live/b/counterside" target="_blank">아카라이브 카운터사이드 채널</a>
+		</footer>
+	</div>
+	
+	<script src="./js/tuning.js" type="text/javascript"></script>
+</body>
+</html>

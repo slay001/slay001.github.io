@@ -1,0 +1,84 @@
+.equip-description p{
+	text-align:center;
+	margin:0;
+}
+
+.equip-type{
+	width:100%;
+}
+
+.equip-result{
+	border:1px solid black;
+	min-width:70%;
+	max-width:70%;
+	min-height:206px;
+	max-height:206px;
+	margin:0 auto;
+	margin-top:10px;
+	display:table;
+}
+
+.equip-result ul{
+	text-align:center;
+}
+
+.equip-result li{
+	min-width:120px;
+	max-width:120px;
+	min-height:100px;
+	float:left;
+	list-style:none;
+	margin:1px;
+	border:1px solid black;
+	border-radius: 2px;
+}
+
+.equip-content{
+	margin:15px auto;
+	width:100%;
+	display:flex;
+}
+
+.equip-table{
+	width:45%;
+	text-align:center;
+	color:white;
+}
+
+.equip-table tr td{
+	background-color:#002341;
+}
+
+.equip-table tr:nth-child(1) td{
+	padding-top:5px;
+	height:50px;
+}
+.equip-table tr:nth-child(3) td{
+	color:#c0c0c0;
+}
+.equip-table tr:nth-child(4) td{
+	color:#ab11de;
+}
+.equip-table tr:nth-child(5) td{
+	color:#fcdf6a;
+}
+
+.equip-mid-arrow{
+	width:10%;
+	text-align:center;
+	margin:auto 0;
+}
+
+/* 모바일 디바이스 */
+@media all and (max-width:380px){
+	.equip-result{
+		min-width:100%;
+		max-width:100%;
+	}
+	
+	.equip-result li{
+		min-width:100px;
+		max-width:100px;
+		min-height:80px;
+	}
+}
