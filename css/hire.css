@@ -32,3 +32,17 @@
 	border:1px solid black;
 	border-radius: 2px;
 }
+
+/* 모바일 디바이스 */
+@media screen and (max-width:768px){
+	.hire-result{
+		min-width:100%;
+		max-width:100%;
+	}
+	
+	.hire-result li{
+		min-width:100px;
+		max-width:100px;
+		min-height:80px;
+	}
+}
