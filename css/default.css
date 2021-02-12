@@ -1,0 +1,36 @@
+.container{
+	padding-top: 20px;
+	margin: 0 auto;
+	max-width: 980px;
+}
+
+.flip_H{
+	color: red;
+	display: inline-block;
+	-webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+	-moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+	-o-transform: matrix(-1, 0, 0, 1, 0, 0);
+	transform: matrix(-1, 0, 0, 1, 0, 0); 
+}
+
+.rarity-n{
+	font-weight:bold;
+	color:black;
+}
+.rarity-r{
+	font-weight:bold;
+	color:blue;	
+}
+.rarity-sr{
+	font-weight:bold;
+	color:purple;
+}
+.rarity-ssr{
+	font-weight:bold;
+	color:burlywood;
+}
+
+.footer{
+	margin-top:40px;
+	text-align:center;
+}
