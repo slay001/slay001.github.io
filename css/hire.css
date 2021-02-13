@@ -38,6 +38,26 @@
 	border-radius: 2px;
 }
 
+.hidden-hire-menu.show{
+	width:200%;
+}
+
+.hidden-hire-menu.show > li:hover{
+	background-color:#0d6efd;
+	color:white;
+	transition: color .15s ease-in-out,
+	background-color .15s ease-in-out,
+	border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#hidden-hire-group:hover{
+	background-color:#0d6efd !important;
+	color:white !important;
+	transition: color .15s ease-in-out,
+	background-color .15s ease-in-out,
+	border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+}
+
 /* 모바일 디바이스 */
 @media all and (max-width:760px){
 	.hire-result{
@@ -50,7 +70,7 @@
 		max-width:100px;
 		min-height:80px;
 	}
-
+	
 	.hire-result li img{
 		min-width:80px;
 		max-width:80px;

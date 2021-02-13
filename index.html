@@ -57,8 +57,38 @@ tr, td, th {padding: 0;border: 0;}
 			<input type="radio" class="btn-check" name="hire-type-radio" id="harap-hire" autocomplete="off">
 			<label class="btn btn-outline-primary" for="harap-hire">하랍 픽업 채용</label>
 
-			<input type="radio" class="btn-check" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="hidden-hire">기밀 채용</label>
+			<div class="btn-group" role="group">
+				<button id="hidden-hire-group" type="button" class="btn dropdown-toggle btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">기밀 채용</button>
+				<ul class="dropdown-menu hidden-hire-menu" aria-labelledby="btnGroupDrop1">
+					<li>
+						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
+						<label for="hidden-hire">얼터그레시브 서윤</label>
+					</li>
+					<li>
+						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
+						<label for="hidden-hire">육익 나유빈</label>
+					</li>
+					<li>
+						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
+						<label for="hidden-hire">솔라 코덱스 유나 스프링필드</label>
+					</li>
+					<li>
+						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
+						<label for="hidden-hire">에이스 오브 윙즈 이수연</label>
+					</li>
+					<li>
+						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
+						<label for="hidden-hire">타입 : 펜릴 유미나</label>
+					</li>
+					<li>
+						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
+						<label for="hidden-hire">타입 : 지크프리트 힐데</label>
+					</li>
+				</ul>
+			</div>
+
+			<!-- <input type="radio" class="btn-check" name="hire-type-radio" id="hidden-hire" autocomplete="off">
+			<label class="btn btn-outline-primary" for="hidden-hire">기밀 채용</label> -->
 		
 			<input type="radio" class="btn-check" name="hire-type-radio" id="1staniv-hire" autocomplete="off">
 			<label class="btn btn-outline-primary" for="1staniv-hire">1주년 기념 채용</label>
@@ -81,6 +111,7 @@ tr, td, th {padding: 0;border: 0;}
 				<button type="button" class="btn btn-primary hire-1">1회 채용</button>
 				<button type="button" class="btn btn-primary hire-10">10회 채용</button>
 				<button type="button" class="btn btn-danger hire-reset">초기화</button>
+				<button type="button" class="btn btn-primary hire-info" data-bs-toggle="modal" data-bs-target="#hire-info-modal">채용 목록</button>
 			</p>
 		</div>
 		
@@ -93,6 +124,22 @@ tr, td, th {padding: 0;border: 0;}
 			<span>획득 SSR 리스트</span> 
 			<ul class="hire-ssr-list">
 			</ul>
+		</div>
+
+		<!-- 채용 목록 모달 -->
+		<div class="modal fade" id="hire-info-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="hire-info-modal-title" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-scrollable">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="hire-info-modal-title">채용 목록</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body hire-info-modal-body"></div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 
 		<footer class="footer">
