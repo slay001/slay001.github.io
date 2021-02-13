@@ -367,9 +367,9 @@
 				}else if(getRarity == "ssr" && nowHireTypeId == "operator-hire"){
 					iconImg = "./img/unit_icon/unit_ssr.jpg";
 				}else if(getRarity == "ssr" || getRarity == "pickup"){
-					console.log(getChar);
+
 					if(getChar == "하랍") iconImg = "./img/unit_icon/unit_144.jpg";
-					else if(getChar == "얼터그레시브 서윤") iconImg = "./img/unit_icon/unit_144.jpg";
+					else if(getChar == "얼터그레시브 서윤") iconImg = "./img/unit_icon/unit_142.jpg";
 					else if(getChar == "릴리") iconImg = "./img/unit_icon/unit_138.jpg";
 					else if(getChar == "베로니카") iconImg = "./img/unit_icon/unit_135.jpg";
 					else if(getChar == "시그마") iconImg = "./img/unit_icon/unit_132.jpg";
