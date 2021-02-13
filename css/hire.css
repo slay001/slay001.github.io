@@ -34,7 +34,7 @@
 }
 
 /* 모바일 디바이스 */
-@media all and (max-width:380px){
+@media all and (max-width:760px){
 	.hire-result{
 		min-width:100%;
 		max-width:100%;
