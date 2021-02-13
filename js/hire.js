@@ -83,13 +83,9 @@
 					ssrPool.push('야누스');
 					ssrPool.push('시그마');
 					
-					for(var i=0; i<37; i++){
-						srPool.push('대충 SR');
-					}
+					srPool.push('신비한 금태');
 					
-					for(var i=0; i<30; i++){
-						rPool.push('대충 R');
-					}
+					rPool.push('신비한 상연');
 					
 				}else if(changedId == '1staniv-hire'){
 					// 1주년 기념 채용
@@ -107,10 +103,10 @@
 					
 					ssrPool.push('류드밀라');
 					ssrPool.push('카린 웡');
-					ssrPool.push('에델');
-					ssrPool.push('레지나');
+					ssrPool.push('에델 마이트너');
+					ssrPool.push('레지나 맥크레디 ');
 					ssrPool.push('릴리');
-					ssrPool.push('이디스');
+					ssrPool.push('이디스 트윈즈');
 					ssrPool.push('가은');
 					ssrPool.push('베로니카');
 					
@@ -127,13 +123,9 @@
 					srPool.push('무반동 포병');
 					srPool.push('한소림');
 					
-					for(var i=0; i<22; i++){
-						rPool.push('대충 R');
-					}
+					rPool.push('신비한 상연');
+					nPool.push('신비한 힐데');
 					
-					for(var i=0; i<13; i++){
-						nPool.push('대충 N');
-					}
 				}else if(changedId == 'harap-hire'){
 					// 하랍 픽업 (임시)
 					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
@@ -190,17 +182,9 @@
 					ssrPool.push('야누스');
 					ssrPool.push('시그마');
 					
-					for(var i=0; i<37; i++){
-						srPool.push('대충 SR');
-					}
-					
-					for(var i=0; i<30; i++){
-						rPool.push('대충 R');
-					}
-					
-					for(var i=0; i<13; i++){
-						nPool.push('대충 N');
-					}
+					srPool.push('신비한 금태');
+					rPool.push('신비한 상연');
+					nPool.push('신비한 힐데');
 				}else{
 					// 오퍼레이터 수시채용
 					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
@@ -372,12 +356,70 @@
 					}
 				}
 				
+				var iconImg = "";
+				
+				if(getRarity == "n"){
+					iconImg = "./img/unit_icon/unit_n.jpg";
+				}else if(getRarity == "r"){
+					iconImg = "./img/unit_icon/unit_r.jpg";
+				}else if(getRarity == "sr"){
+					iconImg = "./img/unit_icon/unit_sr.jpg";
+				}else if(getRarity == "ssr" && nowHireTypeId == "operator-hire"){
+					iconImg = "./img/unit_icon/unit_ssr.jpg";
+				}else if(getRarity == "ssr" || getRarity == "pickup"){
+					console.log(getChar);
+					if(getChar == "하랍") iconImg = "./img/unit_icon/unit_144.jpg";
+					else if(getChar == "얼터그레시브 서윤") iconImg = "./img/unit_icon/unit_144.jpg";
+					else if(getChar == "릴리") iconImg = "./img/unit_icon/unit_138.jpg";
+					else if(getChar == "베로니카") iconImg = "./img/unit_icon/unit_135.jpg";
+					else if(getChar == "시그마") iconImg = "./img/unit_icon/unit_132.jpg";
+					else if(getChar == "류드밀라") iconImg = "./img/unit_icon/unit_130.jpg";
+					else if(getChar == "알렉스") iconImg = "./img/unit_icon/unit_129.jpg";
+					else if(getChar == "야누스") iconImg = "./img/unit_icon/unit_128.jpg";
+					else if(getChar == "이디스 트윈즈") iconImg = "./img/unit_icon/unit_126.jpg";
+					else if(getChar == "옌 싱 란체스터") iconImg = "./img/unit_icon/unit_125.jpg";
+					else if(getChar == "레지나 맥크레디") iconImg = "./img/unit_icon/unit_122.jpg";
+					else if(getChar == "에델 마이트너") iconImg = "./img/unit_icon/unit_120.jpg";
+					else if(getChar == "도미닉 킹 레지날드") iconImg = "./img/unit_icon/unit_118.jpg";
+					else if(getChar == "프레데릭 도마") iconImg = "./img/unit_icon/unit_116.jpg";
+					else if(getChar == "로자리아 르 프리데") iconImg = "./img/unit_icon/unit_115.jpg";
+					else if(getChar == "하야미 사나에") iconImg = "./img/unit_icon/unit_114.jpg";
+					else if(getChar == "나나하라 치나츠") iconImg = "./img/unit_icon/unit_112.jpg";
+					else if(getChar == "나나하라 치후유") iconImg = "./img/unit_icon/unit_110.jpg";
+					else if(getChar == "카린 웡") iconImg = "./img/unit_icon/unit_109.jpg";
+					else if(getChar == "주시영") iconImg = "./img/unit_icon/unit_108.jpg";
+					else if(getChar == "이유미") iconImg = "./img/unit_icon/unit_107.jpg";
+					else if(getChar == "강소영") iconImg = "./img/unit_icon/unit_106.jpg";
+					else if(getChar == "양하림") iconImg = "./img/unit_icon/unit_103.jpg";
+					else if(getChar == "루미") iconImg = "./img/unit_icon/unit_097.jpg";
+					else if(getChar == "가은") iconImg = "./img/unit_icon/unit_096.jpg";
+					else if(getChar == "에스타크") iconImg = "./img/unit_icon/unit_094.jpg";
+					else if(getChar == "이프리트") iconImg = "./img/unit_icon/unit_092.jpg";
+					else if(getChar == "관리국 검사") iconImg = "./img/unit_icon/unit_089.jpg";
+					else if(getChar == "나유빈") iconImg = "./img/unit_icon/unit_088.jpg";
+					else if(getChar == "이수연") iconImg = "./img/unit_icon/unit_087.jpg";
+					else if(getChar == "신지아") iconImg = "./img/unit_icon/unit_070.jpg";
+					else if(getChar == "엘리자베스 펜드래건") iconImg = "./img/unit_icon/unit_067.jpg";
+					else if(getChar == "에스테로사 드 슈발리에") iconImg = "./img/unit_icon/unit_057.jpg";
+					else if(getChar == "ATAC-130 건쉽") iconImg = "./img/unit_icon/unit_056.jpg";
+					else if(getChar == "간나쓰선") iconImg = "./img/unit_icon/unit_054.jpg";
+					else if(getChar == "ATL-1 링컨") iconImg = "./img/unit_icon/unit_053.jpg";
+					else if(getChar == "카일 웡") iconImg = "./img/unit_icon/unit_047.jpg";
+					else if(getChar == "마리아 안토노프") iconImg = "./img/unit_icon/unit_045.jpg";
+					else if(getChar == "타이탄") iconImg = "./img/unit_icon/unit_036.jpg";
+					else if(getChar == "터미네이터") iconImg = "./img/unit_icon/unit_031.jpg";
+					else if(getChar == "스트롱홀드") iconImg = "./img/unit_icon/unit_029.jpg";
+					else if(getChar == "샤오린") iconImg = "./img/unit_icon/unit_006.jpg";
+					else if(getChar == "서윤") iconImg = "./img/unit_icon/unit_004.jpg";
+				}
+				
 				var innerHTML = "";
 				innerHTML += "<li class='rarity-"+getRarity+"'>";
-				innerHTML += 	"<div style='border:1px solid black;'>[대충 얼굴]</div>";
+				innerHTML += 	"<div style='border:1px solid black;'><img src='"+iconImg+"'></div>";
+				innerHTML += 	"<div><span>["+getRarity.toUpperCase()+"]</span></div>";
 				innerHTML += 	"<div><span>"+getChar+"</span></div>";
 				if(isCeiling){
-				innerHTML += 	"<div><span>(천장)</span></div>";
+				innerHTML += 	"<div><span>(확정채용)</span></div>";
 				}
 				innerHTML += "</li>";
 				
