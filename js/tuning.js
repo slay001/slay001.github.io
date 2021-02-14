@@ -7,9 +7,29 @@
 			var tuningCredit = 0;
 			var setCredit = 0;
 			
-			// 옵션변경 풀
-			var optionPool = [];
+			// 옵션 풀
+			var tuningPool = [];
 			var setPool = [];
+			
+			// 튜닝 풀 초기화
+			tuningPool.push('체력'); 
+			tuningPool.push('공격력'); 
+			tuningPool.push('방어력'); 
+			tuningPool.push('치명'); 
+			tuningPool.push('치명타 피해 저항'); 
+			tuningPool.push('치명타 피해'); 
+			tuningPool.push('스킬충전속도'); 
+			tuningPool.push('상태이상 저항'); 
+			tuningPool.push('vs공중 피해'); 
+			tuningPool.push('vs공중 피해감소'); 
+			tuningPool.push('vs스트라이커 피해'); 
+			tuningPool.push('vs스트라이커 피해감소'); 
+			tuningPool.push('vs디펜더 피해'); 
+			tuningPool.push('vs디펜더 피해감소'); 
+			tuningPool.push('vs레인저 피해'); 
+			tuningPool.push('vs레인저 피해감소'); 
+			tuningPool.push('vs스나이퍼 피해'); 
+			tuningPool.push('vs스나이퍼 피해감소'); 
 			
 			// 세트 풀 초기화
 			setPool.push('체력');
@@ -81,6 +101,8 @@
 				tuningBinary += 13;
 				tuningCount++;
 				
+				tuning();
+				
 				updateUseGoods();
 			})
 			
@@ -114,13 +136,78 @@
 			// 변경 정보 초기화
 			function gachaReset(){
 				setBinary = 0;
-				optionBinary = 0;
+				tuningBinary = 0;
 				setCount = 0;
-				optionCount = 0;
+				tuningCount = 0;
 				setCredit = 0;
-				optionCredit = 0;
+				tuningCredit = 0;
 				
 				updateUseGoods();
+			}
+			
+			// 옵션2 1회 변경
+			function tuning(){
+				var changedId = $('input[name="equip-type-radio"]:checked').attr('id');
+				
+				// 변경 옵션 설정 후 최저, 최고 퍼센트 설정
+				var tuningOption = tuningPool[Math.floor(Math.random()*tuningPool.length)];
+				var isFloat = true;
+				var minRange = 0;
+				var maxRange = 0;
+				var result = 0;
+				
+				if(tuningOption == "체력"){
+					isFloat = false;
+					minRange = 75;
+					maxRange = 300;
+				}else if(tuningOption == "공격력"){
+					isFloat = false;
+					minRange = 18;
+					maxRange = 36;
+				}else if(tuningOption == "방어력" || tuningOption == "치명"){
+					isFloat = false;
+					minRange = 33;
+					maxRange = 65;
+				}else if(tuningOption == "치명타 피해 저항"){
+					minRange = 15.0;
+					maxRange = 30.0;
+				}else if(tuningOption == "치명타 피해"){
+					minRange = 4.7;
+					maxRange = 14.0;
+				}else if(tuningOption == "스킬충전속도"){
+					minRange = 4.5;
+					maxRange = 9.0;
+				}else if(tuningOption == "상태이상 저항"){
+					minRange = 10.0;
+					maxRange = 20.0;
+				}else{
+					minRange = 6.0;
+					maxRange = 12.0;
+				}
+				
+				// 보조장비의 경우 현재 최저 최고 퍼센트에서 10%+소수점 올림을 더한 수치
+				if(changedId == 'equip-sub1' || changedId == 'equip-sub2'){
+					if(isFloat){
+						minRange = parseFloat((minRange*1.1).toFixed(1));
+						maxRange = parseFloat((maxRange*1.1).toFixed(1));
+					}else{
+						minRange = Math.round(minRange*1.1);
+						maxRange = Math.round(maxRange*1.1);
+					}
+				}
+				
+				// 옵션 퍼센트 연산
+				if(isFloat){
+					result = (Math.random()*(maxRange-minRange)+minRange).toFixed(1) + "%";
+				}else{
+					result = "+" + Math.floor(Math.random()*(maxRange-minRange)+minRange);
+				}
+				
+				var afterTuning = $(".equip-after tr:nth-child(5) td").text();
+				var newTuning = tuningOption + " " + result;
+				
+				$(".equip-before tr:nth-child(5) td").text(afterTuning);
+				$(".equip-after tr:nth-child(5) td").text(newTuning);
 			}
 
 			// 사용 재화 업데이트
