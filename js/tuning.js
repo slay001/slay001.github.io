@@ -49,44 +49,95 @@
 			setPool.push('스킬충전속도');
 			setPool.push('공격속도');
 			
+			console.log("1");
+			// 장비 타입 변경
 			$("input[name='equip-type-radio']").change(function(){
 				var changedId = $('input[name="equip-type-radio"]:checked').attr('id');
+				var nowTier = $('input[name="tier-type-radio"]:checked').attr('id');
 				
 				gachaReset();
 				
 				if(changedId == 'equip-wep'){
 					// 무기
+					
 					$(".equip-table tr:nth-child(1) td").empty().append("<img src='./img/icon/ree1.png'/>");
-					$(".equip-table tr:nth-child(2) td").text("대적자의 핸즈 T5");
-					$(".equip-table tr:nth-child(3) td").text("공격력 +110");
-					$(".equip-table tr:nth-child(4) td").text("vs지상 피해 5.0%");
+					
+					if(nowTier == "tier-5"){
+						$(".equip-table tr:nth-child(2) td").text("대적자의 핸즈 T5");
+						$(".equip-table tr:nth-child(3) td").text("공격력 +110");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해 5.0%");
+					}else{
+						$(".equip-table tr:nth-child(2) td").text("메이즈 핸즈 T6");
+						$(".equip-table tr:nth-child(3) td").text("공격력 +129");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해 13.0%");
+					}
 					$(".equip-table tr:nth-child(6) td").text(setPool[Math.floor(Math.random()*setPool.length)]);
 					
 				}else if(changedId == 'equip-def'){
 					// 방어구
+					
 					$(".equip-table tr:nth-child(1) td").empty().append("<img src='./img/icon/ree2.png'/>");
-					$(".equip-table tr:nth-child(2) td").text("대적자의 케이스 T5");
-					$(".equip-table tr:nth-child(3) td").text("체력 +924");
-					$(".equip-table tr:nth-child(4) td").text("vs지상 피해감소 8.0%");
+					
+					if(nowTier == "tier-5"){
+						$(".equip-table tr:nth-child(2) td").text("대적자의 케이스 T5");
+						$(".equip-table tr:nth-child(3) td").text("체력 +924");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해감소 8.0%");
+					}else{
+						$(".equip-table tr:nth-child(2) td").text("메이즈 케이스 T6");
+						$(".equip-table tr:nth-child(3) td").text("체력 +1078");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해감소 12.0%");
+					}
 					$(".equip-table tr:nth-child(6) td").text(setPool[Math.floor(Math.random()*setPool.length)]);
 					
 				}else if(changedId == 'equip-sub1'){
 					// 보조 장비1
+					
 					$(".equip-table tr:nth-child(1) td").empty().append("<img src='./img/icon/ree3.png'/>");
-					$(".equip-table tr:nth-child(2) td").text("대적자의 크라운 T5");
-					$(".equip-table tr:nth-child(3) td").text("명중 +132");
-					$(".equip-table tr:nth-child(4) td").text("vs지상 피해 7.0%");
+					
+					if(nowTier == "tier-5"){
+						$(".equip-table tr:nth-child(2) td").text("대적자의 크라운 T5");
+						$(".equip-table tr:nth-child(3) td").text("명중 +132");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해 7.0%");
+					}else{
+						$(".equip-table tr:nth-child(2) td").text("메이즈 크라운 T6");
+						$(".equip-table tr:nth-child(3) td").text("명중 +149");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해 14.0%");
+					}
 					$(".equip-table tr:nth-child(6) td").text(setPool[Math.floor(Math.random()*setPool.length)]);
 					
 				}else{
 					// 보조 장비2
+					
 					$(".equip-table tr:nth-child(1) td").empty().append("<img src='./img/icon/ree4.png'/>");
-					$(".equip-table tr:nth-child(2) td").text("대적자의 무브먼트 T5");
-					$(".equip-table tr:nth-child(3) td").text("회피 +132");
-					$(".equip-table tr:nth-child(4) td").text("vs지상 피해 7.0%");
+					
+					if(nowTier == "tier-5"){
+						$(".equip-table tr:nth-child(2) td").text("대적자의 무브먼트 T5");
+						$(".equip-table tr:nth-child(3) td").text("회피 +132");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해 7.0%");
+					}else{
+						$(".equip-table tr:nth-child(2) td").text("메이즈 크라운 T6");
+						$(".equip-table tr:nth-child(3) td").text("명중 +149");
+						$(".equip-table tr:nth-child(4) td").text("vs지상 피해 14.0%");
+					}
 					$(".equip-table tr:nth-child(6) td").text(setPool[Math.floor(Math.random()*setPool.length)]);
 				}
+			})
+			
+			// 티어 변경
+			$("input[name='tier-type-radio']").change(function(){
 				
+				gachaReset();
+				
+				$("input[name='equip-type-radio']").change();
+				
+				// 설명문구 변경
+				var nowTier = $('input[name="tier-type-radio"]:checked').attr('id');
+				
+				if(nowTier == "tier-5"){
+					$(".change-description-p").text("※1회 소비량 : 옵변 튜바 13 크레딧 50,400 / 셋변 셋바 8 크레딧 216,000");
+				}else{
+					$(".change-description-p").text("※1회 소비량 : 옵변 튜바 15 크레딧 58,800 / 셋변 셋바 10 크레딧 270,000");
+				}
 			})
 			
 			// navbar active설정
@@ -97,8 +148,16 @@
 			
 			// 옵션2 변경
 			$(".change-option2").click(function(){
-				tuningCredit += 50400;
-				tuningBinary += 13;
+				var nowTier = $('input[name="tier-type-radio"]:checked').attr('id');
+				
+				if(nowTier == "tier-5"){
+					tuningCredit += 50400;
+					tuningBinary += 13;
+				}else{
+					tuningCredit += 58800;
+					tuningBinary += 15;
+				}
+				
 				tuningCount++;
 				
 				tuning();
@@ -108,8 +167,16 @@
 			
 			// 세트 변경
 			$(".change-set").click(function(){
-				setCredit += 216000;
-				setBinary += 8;
+				var nowTier = $('input[name="tier-type-radio"]:checked').attr('id');
+				
+				if(nowTier == "tier-5"){
+					setCredit += 216000;
+					setBinary += 8;
+				}else{
+					setCredit += 270000;
+					setBinary += 10;
+				}
+				
 				setCount++;
 				
 				var afterSet = "";
@@ -148,6 +215,7 @@
 			// 옵션2 1회 변경
 			function tuning(){
 				var changedId = $('input[name="equip-type-radio"]:checked').attr('id');
+				var nowTier = $('input[name="tier-type-radio"]:checked').attr('id');
 				
 				// 변경 옵션 설정 후 최저, 최고 퍼센트 설정
 				var tuningOption = tuningPool[Math.floor(Math.random()*tuningPool.length)];
@@ -158,31 +226,66 @@
 				
 				if(tuningOption == "체력"){
 					isFloat = false;
-					minRange = 75;
-					maxRange = 300;
+					if(nowTier == "tier-5"){
+						minRange = 75;
+						maxRange = 300;
+					}else{
+						minRange = 88;
+						maxRange = 350;
+					}
 				}else if(tuningOption == "공격력"){
 					isFloat = false;
-					minRange = 18;
-					maxRange = 36;
+					if(nowTier == "tier-5"){
+						minRange = 18;
+						maxRange = 36;
+					}else{
+						minRange = 21;
+						maxRange = 42;
+					}
 				}else if(tuningOption == "방어력" || tuningOption == "치명"){
 					isFloat = false;
-					minRange = 33;
-					maxRange = 65;
+					if(nowTier == "tier-5"){
+						minRange = 33;
+						maxRange = 65;
+					}else{
+						minRange = 37;
+						maxRange = 73;
+					}
 				}else if(tuningOption == "치명타 피해 저항"){
-					minRange = 15.0;
-					maxRange = 30.0;
+					if(nowTier == "tier-5"){
+						minRange = 15.0;
+						maxRange = 30.0;
+					}else{
+						minRange = 17.5;
+						maxRange = 35.0;
+					}
 				}else if(tuningOption == "치명타 피해"){
-					minRange = 4.7;
-					maxRange = 14.0;
+					if(nowTier == "tier-5"){
+						minRange = 4.7;
+						maxRange = 14.0;
+					}else{
+						minRange = 5;
+						maxRange = 15;
+					}
 				}else if(tuningOption == "스킬충전속도"){
-					minRange = 4.5;
-					maxRange = 9.0;
+					if(nowTier == "tier-5"){
+						minRange = 4.5;
+						maxRange = 9.0;
+					}else{
+						minRange = 5;
+						maxRange = 10;
+					}
 				}else if(tuningOption == "상태이상 저항"){
 					minRange = 10.0;
 					maxRange = 20.0;
 				}else{
-					minRange = 6.0;
-					maxRange = 12.0;
+					if(nowTier == "tier-5"){
+						minRange = 6.0;
+						maxRange = 12.0;
+					}else{
+						minRange = 7.0;
+						maxRange = 14.0;
+					}
 				}
 				
 				// 보조장비의 경우 현재 최저 최고 퍼센트에서 10%+소수점 올림을 더한 수치
