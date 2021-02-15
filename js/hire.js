@@ -33,6 +33,7 @@
 				if(changedId == 'hidden-hire'){
 					// 기밀 채용
 					$(".hire-percent").text("SSR 3.5% SR 15% R 81.5% N 0%");
+					$(".hire-term").text("");
 					$(".goods-type").text("기채권");
 					
 					// 천장 표기
@@ -94,6 +95,7 @@
 				}else if(changedId == '1staniv-hire'){
 					// 1주년 기념 채용
 					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
+					$(".hire-term").text("2/2(화) ~ 3/2(화)");
 					$(".hire-pickup-char").text("없음");
 					$(".goods-type").text("쿼츠");
 					
@@ -133,6 +135,7 @@
 				}else if(changedId == 'harap-hire'){
 					// 하랍 픽업 (임시)
 					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
+					$(".hire-term").text("2/16(화) ~ 3/2(화)");
 					$(".hire-pickup-char").text("하랍");
 					$(".goods-type").text("쿼츠");
 					
@@ -189,9 +192,10 @@
 					srPool.push('신비한 금태');
 					rPool.push('신비한 상연');
 					nPool.push('신비한 힐데');
-				}else{
+				}else if(changedId == 'operator-hire'){
 					// 오퍼레이터 수시채용
 					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
+					$(".hire-term").text("");
 					$(".hire-pickup-char").text("없음");
 					$(".goods-type").text("쿼츠");
 					
@@ -219,6 +223,68 @@
 					
 					nPool.push('아카데미 상급생');
 					nPool.push('보급형 오토마타');
+				}else{
+					// 수시채용
+					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
+					$(".hire-term").text("");
+					$(".hire-pickup-char").text("없음");
+					$(".goods-type").text("쿼츠");
+					
+					// 천장 숨김
+					$(".ceiling").hide();
+					
+					ssrPercent = 3.5;
+					srPercent = 15;
+					rPercent = 39;
+					nPercent = 42.5;
+
+					ssrPool.push('루미');
+					ssrPool.push('이수연');
+					ssrPool.push('에스테로사 드 슈발리에');
+					ssrPool.push('나나하라 치후유');
+					ssrPool.push('주시영');
+					ssrPool.push('옌 싱 란체스터');
+					ssrPool.push('알렉스');
+					ssrPool.push('샤오린');
+					ssrPool.push('하야미 사나에');
+					ssrPool.push('카린 웡');
+					ssrPool.push('에델 마이트너');
+					ssrPool.push('류드밀라');
+					ssrPool.push('마리아 안토노프');
+					ssrPool.push('이디스 트윈즈');
+					ssrPool.push('나나하라 치나츠');
+					ssrPool.push('양하림');
+					ssrPool.push('레지나 맥크레디');
+					ssrPool.push('릴리');
+					ssrPool.push('서윤');
+					ssrPool.push('가은');
+					ssrPool.push('카일 웡');
+					ssrPool.push('나유빈');
+					ssrPool.push('로자리아 르 프리데');
+					ssrPool.push('프레데릭 도마');
+					ssrPool.push('엘리자베스 펜드래건');
+					ssrPool.push('신지아');
+					ssrPool.push('이유리');
+					ssrPool.push('이유미');
+					ssrPool.push('도미닉 킹 레지날드');
+					ssrPool.push('터미네이터');
+					ssrPool.push('관리국 검사');
+					ssrPool.push('베로니카');
+					ssrPool.push('강소영');
+					ssrPool.push('스트롱홀드');
+					ssrPool.push('최지훈');
+					ssrPool.push('ATAC-130 건쉽');
+					ssrPool.push('타이탄');
+					ssrPool.push('이프리트');
+					ssrPool.push('ATL-1 링컨');
+					ssrPool.push('에스타크');
+					ssrPool.push('간나쓰선');
+					ssrPool.push('야누스');
+					ssrPool.push('시그마');
+
+					srPool.push('신비한 금태');
+					rPool.push('신비한 상연');
+					nPool.push('신비한 힐데');
 				}
 				
 			})
@@ -421,6 +487,8 @@
 				}else if(getRarity == "ssr" || getRarity == "pickup"){
 					if(getChar == "하랍") iconImg = "./img/unit_icon/unit_144.jpg";
 					else if(getChar == "얼터그레시브 서윤") iconImg = "./img/unit_icon/unit_142.jpg";
+					else if(getChar == "최지훈") iconImg = "./img/unit_icon/unit_141.jpg";
+					else if(getChar == "이유리") iconImg = "./img/unit_icon/unit_140.jpg";
 					else if(getChar == "릴리") iconImg = "./img/unit_icon/unit_138.jpg";
 					else if(getChar == "베로니카") iconImg = "./img/unit_icon/unit_135.jpg";
 					else if(getChar == "육익 나유빈") iconImg = "./img/unit_icon/unit_134.jpg";
