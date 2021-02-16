@@ -134,9 +134,9 @@
 				var nowTier = $('input[name="tier-type-radio"]:checked').attr('id');
 				
 				if(nowTier == "tier-5"){
-					$(".change-description-p").text("※1회 소비량 : 옵변 튜바 13 크레딧 50,400 / 셋변 셋바 8 크레딧 216,000");
+					$(".change-description-p").text("※1회 소비량 : 옵변 튜바 13 크레딧 63,000 / 셋변 셋바 8 크레딧 216,000");
 				}else{
-					$(".change-description-p").text("※1회 소비량 : 옵변 튜바 15 크레딧 58,800 / 셋변 셋바 10 크레딧 270,000");
+					$(".change-description-p").text("※1회 소비량 : 옵변 튜바 15 크레딧 73,500 / 셋변 셋바 10 크레딧 270,000");
 				}
 			})
 			
@@ -151,10 +151,10 @@
 				var nowTier = $('input[name="tier-type-radio"]:checked').attr('id');
 				
 				if(nowTier == "tier-5"){
-					tuningCredit += 50400;
+					tuningCredit += 63000;
 					tuningBinary += 13;
 				}else{
-					tuningCredit += 58800;
+					tuningCredit += 73500;
 					tuningBinary += 15;
 				}
 				
