@@ -27,6 +27,7 @@
 				
 				charPoolReset();
 				gachaReset();
+				$("#red-fish-check").prop("checked", false);
 				
 				$("#hidden-hire-group").css('background-color','white').css('color','#0d6efd');
 				
@@ -402,11 +403,19 @@
 				var isCeiling = false;
 				var pickupChar = "";
 				var getRarity = "";
+				var isRedFish = false;
 				
 				// 현재 채용 타입
 				var nowHireTypeId = $('input[name="hire-type-radio"]:checked').attr('id');
 				
-				if(randPercent <= ssrPercent || ceilingCount <= 1){
+				// 홍어버튼 여부
+				if($('#red-fish-check:checked').length == 1){
+					isRedFish = true;
+				}else{
+					isRedFish = false;
+				}
+
+				if(isRedFish || (randPercent <= ssrPercent || ceilingCount <= 1)){
 					
 					// 기밀/픽업채용일 경우 
 					if(nowHireTypeId == 'hidden-hire' || nowHireTypeId == 'harap-hire'){
