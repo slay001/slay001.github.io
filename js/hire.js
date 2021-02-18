@@ -404,7 +404,7 @@
 				var pickupChar = "";
 				var getRarity = "";
 				var isRedFish = false;
-				
+
 				// 현재 채용 타입
 				var nowHireTypeId = $('input[name="hire-type-radio"]:checked').attr('id');
 				
@@ -413,6 +413,14 @@
 					isRedFish = true;
 				}else{
 					isRedFish = false;
+				}
+				
+				if($('#red-fish-check2:checked').length == 1){
+					var rand = Math.random()*10;
+
+					if(rand <= 2){
+						isRedFish = true;
+					}
 				}
 
 				if(isRedFish || (randPercent <= ssrPercent || ceilingCount <= 1)){
