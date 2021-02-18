@@ -328,6 +328,14 @@
 					gachaReset();
 				}
 			})
+
+			// 홍어버튼 반대쪽 체크해제
+			$("#red-fish-check").click(function(){
+				$("#red-fish-check2").prop("checked", false);
+			})
+			$("#red-fish-check2").click(function(){
+				$("#red-fish-check").prop("checked", false);
+			})
 			
 			// 채용 목록
 			$(".hire-info").click(function(){
