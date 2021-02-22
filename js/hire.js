@@ -191,7 +191,38 @@
 					rPercent = 35;
 					nPercent = 55;
 					
-					ssrPool.push('이수연');
+					ssrPool.push('이수연 ');
+					ssrPool.push('올리비에 박');
+					ssrPool.push('아나스타샤 체르노바');
+					ssrPool.push('클로에 스타시커');
+					ssrPool.push('레나 맥켄지');
+					
+					srPool.push('장 웨이');
+					srPool.push('마크 핀리');
+					srPool.push('이윤정');
+					srPool.push('나희린');
+					
+					rPool.push('리플레이서 사령관');
+					rPool.push('라임');
+					
+					nPool.push('아카데미 상급생');
+					nPool.push('보급형 오토마타');
+				}else if(changedId == 'hana-hire'){
+					// 김하나 픽업채용
+					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
+					$(".hire-term").text("2/23(화) ~ 3/16(화)");
+					$(".hire-pickup-char").text("김하나");
+					$(".goods-type").text("쿼츠");
+					
+					// 천장 표시
+					$(".ceiling").show();
+					
+					ssrPercent = 2;
+					srPercent = 8;
+					rPercent = 35;
+					nPercent = 55;
+					
+					ssrPool.push('이수연 ');
 					ssrPool.push('올리비에 박');
 					ssrPool.push('아나스타샤 체르노바');
 					ssrPool.push('클로에 스타시커');
@@ -434,9 +465,9 @@
 				if(isRedFish || (randPercent <= ssrPercent || ceilingCount <= 1)){
 					
 					// 기밀/픽업채용일 경우 
-					if(nowHireTypeId == 'hidden-hire' || nowHireTypeId == 'harap-hire'){
+					if(nowHireTypeId == 'hidden-hire' || nowHireTypeId == 'harap-hire' || nowHireTypeId == 'hana-hire'){
 						var pickupPercent = parseFloat((Math.random()*ssrPercent).toFixed(1));
-						
+						console.log(pickupPercent)
 						if(pickupPercent <= 1 || ceilingCount <= 1){
 							isPickup = true;
 							pickupChar = $(".hire-pickup-char").text();
@@ -477,7 +508,7 @@
 					getChar = selectedPool[pick];
 					
 					// 천장 횟수 갱신
-					if(nowHireTypeId == 'hidden-hire' || nowHireTypeId == 'harap-hire'){
+					if(nowHireTypeId == 'hidden-hire' || nowHireTypeId == 'harap-hire' || nowHireTypeId == 'hana-hire'){
 						ceilingCount--;
 					}
 				}
@@ -543,6 +574,12 @@
 					else if(getChar == "스트롱홀드") iconImg = "./img/unit_icon/unit_029.jpg";
 					else if(getChar == "샤오린") iconImg = "./img/unit_icon/unit_006.jpg";
 					else if(getChar == "서윤") iconImg = "./img/unit_icon/unit_004.jpg";
+					else if(getChar == "이수연 ") iconImg = "./img/oper_icon/oper_001.jpg";
+					else if(getChar == "올리비에 박") iconImg = "./img/oper_icon/oper_002.jpg";
+					else if(getChar == "아나스타샤 체르노바") iconImg = "./img/oper_icon/oper_003.jpg";
+					else if(getChar == "클로에 스타시커") iconImg = "./img/oper_icon/oper_004.jpg";
+					else if(getChar == "레나 맥켄지") iconImg = "./img/oper_icon/oper_005.jpg";
+					else if(getChar == "김하나") iconImg = "./img/oper_icon/oper_006.jpg";
 				}
 				
 				var innerHTML = "";
