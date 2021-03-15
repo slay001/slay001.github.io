@@ -219,6 +219,49 @@
 
 					rPool.push('신비한 상연');
 					nPool.push('신비한 힐데');
+				}else if(changedId == 'knight-hire'){
+					// 리플레이서 나이트 픽업 (임시)
+					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
+					$(".hire-term").text("3/16(화) ~ 3/30(화)");
+					$(".hire-pickup-char").text("리플레이서 나이트");
+					$(".goods-type").text("쿼츠");
+					
+					// 천장 표기
+					$(".ceiling").show();
+					
+					ssrPercent = 3.5;
+					srPercent = 15;
+					rPercent = 39;
+					nPercent = 42.5;
+					
+					ssrPool.push('주시영');
+					ssrPool.push('옌 싱 란체스터');
+					ssrPool.push('에델 마이트너');
+					ssrPool.push('로자리아 르 프리데');
+					ssrPool.push('가은');
+					ssrPool.push('신지아');
+					ssrPool.push('베로니카');
+					ssrPool.push('ATAC-130 건쉽');
+					ssrPool.push('ATL-1 링컨');
+					
+					srPool.push('유진');
+					srPool.push('제이크 워커');
+					srPool.push('리브 앨런');
+					srPool.push('프레데릭 유마');
+					srPool.push('로이 버넷');
+					srPool.push('김소빈');
+					srPool.push('베네딕트 콘스탄틴');
+					srPool.push('리우라 베아트릭스');
+					srPool.push('에블린 켈러');
+					srPool.push('가브리엘 준 더 비셔스브레이커');
+					srPool.push('스카우트');
+					srPool.push('관리국 총병');
+					srPool.push('피스 키퍼');
+					srPool.push('HM 다연장 로켓');
+					srPool.push('리퍼');
+
+					rPool.push('신비한 상연');
+					nPool.push('신비한 힐데');
 				}else if(changedId == 'operator-hire'){
 					// 오퍼레이터 수시채용
 					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
@@ -259,6 +302,37 @@
 					
 					// 천장 표시
 					$(".ceiling").show();
+					
+					ssrPercent = 2;
+					srPercent = 8;
+					rPercent = 35;
+					nPercent = 55;
+					
+					ssrPool.push('이수연 ');
+					ssrPool.push('올리비에 박');
+					ssrPool.push('아나스타샤 체르노바');
+					ssrPool.push('클로에 스타시커');
+					ssrPool.push('레나 맥켄지');
+					
+					srPool.push('장 웨이');
+					srPool.push('마크 핀리');
+					srPool.push('이윤정');
+					srPool.push('나희린');
+					
+					rPool.push('리플레이서 사령관');
+					rPool.push('라임');
+					
+					nPool.push('아카데미 상급생');
+					nPool.push('보급형 오토마타');
+				}else if(changedId == 'king-hire'){
+					// 리플레이서 킹 픽업채용
+					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
+					$(".hire-term").text("3/16(화) ~ 4/6(화)");
+					$(".hire-pickup-char").text("리플레이서 킹");
+					$(".goods-type").text("쿼츠");
+					
+					// 천장 표시
+					$(".ceiling").hide();
 					
 					ssrPercent = 2;
 					srPercent = 8;
@@ -569,6 +643,8 @@
 					iconImg = "./img/unit_icon/unit_ssr.jpg";
 				}else if(getRarity == "ssr" || getRarity == "pickup"){
 					if(getChar == "하랍") iconImg = "./img/unit_icon/unit_144.jpg";
+					else if(getChar == "리플레이서 나이트") iconImg = "./img/unit_icon/unit_147.jpg";
+					else if(getChar == "리플레이서 퀸") iconImg = "./img/unit_icon/unit_146.jpg";
 					else if(getChar == "세라펠") iconImg = "./img/unit_icon/unit_145.jpg";
 					else if(getChar == "얼터그레시브 서윤") iconImg = "./img/unit_icon/unit_142.jpg";
 					else if(getChar == "최지훈") iconImg = "./img/unit_icon/unit_141.jpg";
@@ -625,6 +701,7 @@
 					else if(getChar == "클로에 스타시커") iconImg = "./img/oper_icon/oper_004.jpg";
 					else if(getChar == "레나 맥켄지") iconImg = "./img/oper_icon/oper_005.jpg";
 					else if(getChar == "김하나") iconImg = "./img/oper_icon/oper_006.jpg";
+					else if(getChar == "리플레이서 킹") iconImg = "./img/oper_icon/oper_007.jpg";
 				}
 				
 				var innerHTML = "";
