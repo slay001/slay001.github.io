@@ -262,6 +262,34 @@
 
 					rPool.push('신비한 상연');
 					nPool.push('신비한 힐데');
+				}else if(changedId == 'rita-hire'){
+					// 리타 아르세니코 픽업
+					$(".hire-percent").text("SSR 3.5% SR 15% R 39% N 42.5%");
+					$(".hire-term").text("");
+					$(".hire-pickup-char").text("리타 아르세니코");
+					$(".goods-type").text("쿼츠");
+					
+					// 천장 표기
+					$(".ceiling").show();
+					
+					ssrPercent = 3.5;
+					srPercent = 15;
+					rPercent = 39;
+					nPercent = 42.5;
+					
+					ssrPool.push('마리아 안토노프');
+					ssrPool.push('이수연');
+					ssrPool.push('옌 싱 란체스터');
+					ssrPool.push('에델 마이트너');
+					ssrPool.push('서윤');
+					ssrPool.push('나유빈');
+					ssrPool.push('터미네이터');
+					ssrPool.push('스트롱홀드');
+					ssrPool.push('이프리트');
+					
+					srPool.push('신비한 금태');
+					rPool.push('신비한 상연');
+					nPool.push('신비한 힐데');
 				}else if(changedId == 'operator-hire'){
 					// 오퍼레이터 수시채용
 					$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
@@ -643,6 +671,8 @@
 					iconImg = "./img/unit_icon/unit_ssr.jpg";
 				}else if(getRarity == "ssr" || getRarity == "pickup"){
 					if(getChar == "하랍") iconImg = "./img/unit_icon/unit_144.jpg";
+					else if(getChar == "미니스트라") iconImg = "./img/unit_icon/unit_149.jpg";
+					else if(getChar == "리타 아르세니코") iconImg = "./img/unit_icon/unit_148.jpg";
 					else if(getChar == "리플레이서 나이트") iconImg = "./img/unit_icon/unit_147.jpg";
 					else if(getChar == "리플레이서 퀸") iconImg = "./img/unit_icon/unit_146.jpg";
 					else if(getChar == "세라펠") iconImg = "./img/unit_icon/unit_145.jpg";
