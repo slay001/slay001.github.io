@@ -88,6 +88,21 @@
 					ssrPool.push('간나쓰선');
 					ssrPool.push('야누스');
 					ssrPool.push('시그마');
+					ssrPool.push('최지훈');
+					ssrPool.push('분탕');
+					ssrPool.push('세라펠');
+					ssrPool.push('리플레이서 나이트');
+					ssrPool.push('리플레이서 비숍');
+					ssrPool.push('리타 아르세니코');
+					ssrPool.push('스피라');
+					ssrPool.push('나이엘 블루스틸');
+					ssrPool.push('스카이 레이필드');
+					ssrPool.push('케이시 빈즈');
+					ssrPool.push('미카★스타');
+					ssrPool.push('오버플로');
+					ssrPool.push('론 리');
+					ssrPool.push('기계수집가');
+					ssrPool.push('라라 예거');
 					
 					srPool.push('신비한 금태');
 					
@@ -671,11 +686,25 @@
 					iconImg = "./img/unit_icon/unit_ssr.jpg";
 				}else if(getRarity == "ssr" || getRarity == "pickup"){
 					if(getChar == "하랍") iconImg = "./img/unit_icon/unit_144.jpg";
-					else if(getChar == "미니스트라") iconImg = "./img/unit_icon/unit_149.jpg";
-					else if(getChar == "리타 아르세니코") iconImg = "./img/unit_icon/unit_148.jpg";
-					else if(getChar == "리플레이서 나이트") iconImg = "./img/unit_icon/unit_147.jpg";
-					else if(getChar == "리플레이서 퀸") iconImg = "./img/unit_icon/unit_146.jpg";
+					else if(getChar == "라라 예거") iconImg = "./img/unit_icon/unit_171.jpg";
+					else if(getChar == "기계수집가") iconImg = "./img/unit_icon/unit_170.jpg";
+					else if(getChar == "론 리") iconImg = "./img/unit_icon/unit_169.jpg";
+					else if(getChar == "이볼브 원") iconImg = "./img/unit_icon/unit_168.jpg";
+					else if(getChar == "오버플로") iconImg = "./img/unit_icon/unit_167.jpg";
+					else if(getChar == "미카★스타") iconImg = "./img/unit_icon/unit_160.jpg";
+					else if(getChar == "에이미 퍼스트윙") iconImg = "./img/unit_icon/unit_159.jpg";
+					else if(getChar == "케이시 빈즈") iconImg = "./img/unit_icon/unit_157.jpg";
+					else if(getChar == "스카이 레이필드") iconImg = "./img/unit_icon/unit_156.jpg";
+					else if(getChar == "나이엘 블루스틸") iconImg = "./img/unit_icon/unit_155.jpg";
+					else if(getChar == "미니스트라") iconImg = "./img/unit_icon/unit_153.jpg";
+					else if(getChar == "스피라") iconImg = "./img/unit_icon/unit_152.jpg";
+					else if(getChar == "리타 아르세니코") iconImg = "./img/unit_icon/unit_150.jpg";
+					else if(getChar == "리플레이서 비숍") iconImg = "./img/unit_icon/unit_149.jpg";
+					else if(getChar == "리플레이서 나이트") iconImg = "./img/unit_icon/unit_148.jpg";
+					else if(getChar == "리플레이서 퀸") iconImg = "./img/unit_icon/unit_147.jpg";
+					else if(getChar == "리플레이서 킹") iconImg = "./img/unit_icon/unit_146.jpg";
 					else if(getChar == "세라펠") iconImg = "./img/unit_icon/unit_145.jpg";
+					else if(getChar == "분탕") iconImg = "./img/unit_icon/unit_143.jpg";
 					else if(getChar == "얼터그레시브 서윤") iconImg = "./img/unit_icon/unit_142.jpg";
 					else if(getChar == "최지훈") iconImg = "./img/unit_icon/unit_141.jpg";
 					else if(getChar == "이유리") iconImg = "./img/unit_icon/unit_140.jpg";
@@ -711,7 +740,7 @@
 					else if(getChar == "이프리트") iconImg = "./img/unit_icon/unit_092.jpg";
 					else if(getChar == "관리국 검사") iconImg = "./img/unit_icon/unit_089.jpg";
 					else if(getChar == "나유빈") iconImg = "./img/unit_icon/unit_088.jpg";
-					else if(getChar == "이수연") iconImg = "./img/unit_icon/unit_087.jpg";
+					else if(getChar == "이수연 ") iconImg = "./img/unit_icon/unit_087.jpg";
 					else if(getChar == "신지아") iconImg = "./img/unit_icon/unit_070.jpg";
 					else if(getChar == "엘리자베스 펜드래건") iconImg = "./img/unit_icon/unit_067.jpg";
 					else if(getChar == "에스테로사 드 슈발리에") iconImg = "./img/unit_icon/unit_057.jpg";
