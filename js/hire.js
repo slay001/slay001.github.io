@@ -65,6 +65,10 @@ $(function(){
 		var srList = [];
 		var rList = [];
 		var nList = [];
+		var ssrOperList = [];
+		var srOperList = [];
+		var rOperList = [];
+		var nOperList = [];
 		var hiddenList = [];
 
 		// 각성유닛 전체 리스트 초기화
@@ -110,6 +114,41 @@ $(function(){
 				nUnit.num = el.num;
 
 				nList.push(nUnit);
+			});
+		});
+
+		// 오퍼레이터 전체 리스트 초기화
+		$.getJSON("./json/operator.json", function(data) {
+			data.SSR.forEach(function(el){
+				var ssrUnit = new unitStruct();
+				ssrUnit.name = el.name;
+				ssrUnit.num = el.num;
+
+				ssrOperList.push(ssrUnit);
+			});
+
+			data.SR.forEach(function(el){
+				var srUnit = new unitStruct();
+				srUnit.name = el.name;
+				srUnit.num = el.num;
+
+				srOperList.push(srUnit);
+			});
+
+			data.R.forEach(function(el){
+				var rUnit = new unitStruct();
+				rUnit.name = el.name;
+				rUnit.num = el.num;
+
+				rOperList.push(rUnit);
+			});
+
+			data.N.forEach(function(el){
+				var nUnit = new unitStruct();
+				nUnit.name = el.name;
+				nUnit.num = el.num;
+
+				nOperList.push(nUnit);
 			});
 		});
 
@@ -163,9 +202,6 @@ $(function(){
 				rPercent = 81.5;
 				nPercent = 0;
 				
-				srPool.push('신비한 금태');
-				rPool.push('신비한 상연');
-				
 			}else if(changedType == 'operator'){
 				// 오퍼레이터 수시채용
 				$(".hire-percent").text("SSR 2% SR 8% R 35% N 55%");
@@ -181,13 +217,12 @@ $(function(){
 				rPercent = 35;
 				nPercent = 55;
 				
-				ssrPool.push('세리나 크루');
+				/*ssrPool.push('세리나 크루');
 				ssrPool.push('김하나');
 				ssrPool.push('리플레이서 킹 ');
 				ssrPool.push('시그마 ');
 				ssrPool.push('모네카');
 				ssrPool.push('맨션 마스터');
-				ssrPool.push('세리나 크루');
 				ssrPool.push('이수연 ');
 				ssrPool.push('올리비에 박');
 				ssrPool.push('아나스타샤 체르노바');
@@ -203,7 +238,7 @@ $(function(){
 				rPool.push('라임');
 				
 				nPool.push('아카데미 상급생');
-				nPool.push('보급형 오토마타');
+				nPool.push('보급형 오토마타');*/
 			}else if(changedType == 'pickup'){
 				// 픽업채용
 				$(".hire-percent").text("SSR 3.5% SR 15% R 81.5% N 0%");
@@ -231,7 +266,6 @@ $(function(){
 				srPercent = 15;
 				rPercent = 81.5;
 
-				ssrPool = ssrList;
 			}
 			
 		})
@@ -304,8 +338,24 @@ $(function(){
 		$(".hire-info").click(function(){
 			var calcedSSRPercent = 0;
 			var hasPickup = $(".hire-pickup-char").text() != "없음";
-			if(hasPickup) calcedSSRPercent = ((ssrPercent-1) / ssrList.length).toFixed(2);
-			else calcedSSRPercent = ((ssrPercent) / ssrList.length).toFixed(2);
+
+			var nowHireType = $('input[name="hire-type-radio"]:checked').attr('hireType');
+
+			// 오퍼레이터 뽑기 분기
+			if(nowHireType == 'operator'){
+				ssrPool = ssrOperList;
+				srPool = srOperList;
+				rPool = rOperList;
+				nPool = nOperList;
+			}else {
+				ssrPool = ssrList;
+				srPool = srList;
+				rPool = rList;
+				nPool = nList;
+			}
+
+			if(hasPickup) calcedSSRPercent = ((ssrPercent-1) / ssrPool.length).toFixed(2);
+			else calcedSSRPercent = ((ssrPercent) / ssrPool.length).toFixed(2);
 			
 			var infoHTML = "";
 			infoHTML += "<h5>[SSR "+ssrPercent+"%]</h5>";
@@ -313,31 +363,31 @@ $(function(){
 			if(hasPickup){
 			infoHTML += 	"<li>" + $(".hire-pickup-char").text() + " (1%)</li>";
 			}
-			for(var i=0; i<ssrList.length;i++){
-			infoHTML += 	"<li>" + ssrList[i].name + " (" + calcedSSRPercent + "%)</li>";
+			for(var i=0; i<ssrPool.length;i++){
+			infoHTML += 	"<li>" + ssrPool[i].name + " (" + calcedSSRPercent + "%)</li>";
 			}
 			infoHTML += "</ul>";
 			
 			infoHTML += "<h5>[SR "+srPercent+"%]</h5>";
 			infoHTML += "<ul>";
-			for(var i=0; i<srList.length;i++){
-			infoHTML += 	"<li>" + srList[i].name + " (" + srPercent/srList.length + "%)</li>";
+			for(var i=0; i<srPool.length;i++){
+			infoHTML += 	"<li>" + srPool[i].name + " (" + srPercent/srPool.length + "%)</li>";
 			}
 			infoHTML += "</ul>";
 			
 			infoHTML += "<h5>[R "+rPercent+"%]</h5>";
 			infoHTML += "<ul>";
-			for(var i=0; i<rList.length;i++){
-			infoHTML += 	"<li>" + rList[i].name + " (" + rPercent/rList.length + "%)</li>";
+			for(var i=0; i<rPool.length;i++){
+			infoHTML += 	"<li>" + rPool[i].name + " (" + rPercent/rPool.length + "%)</li>";
 			}
 			infoHTML += "</ul>";
 			
-			/*infoHTML += "<h5>[N "+nPercent+"%]</h5>";
+			infoHTML += "<h5>[N "+nPercent+"%]</h5>";
 			infoHTML += "<ul>";
-			for(var i=0; i<nList.length;i++){
-			infoHTML += 	"<li>" + nList[i] + " (" + nPercent/nList.length + "%)</li>";
+			for(var i=0; i<nPool.length;i++){
+			infoHTML += 	"<li>" + nPool[i].name + " (" + nPercent/nPool.length + "%)</li>";
 			}
-			infoHTML += "</ul>";*/
+			infoHTML += "</ul>";
 			
 			$(".hire-info-modal-body").empty().append(infoHTML);
 		})
@@ -386,6 +436,19 @@ $(function(){
 			}else{
 				isRedFish = false;
 			}
+
+			// 오퍼레이터 뽑기 분기
+			if(nowHireType == 'operator'){
+				ssrPool = ssrOperList;
+				srPool = srOperList;
+				rPool = rOperList;
+				nPool = nOperList;
+			}else {
+				ssrPool = ssrList;
+				srPool = srList;
+				rPool = rList;
+				nPool = nList;
+			}
 			
 			if($('#red-fish-check2:checked').length == 1){
 				var rand = Math.random()*10;
@@ -411,19 +474,19 @@ $(function(){
 					}
 				}
 				
-				selectedPool = ssrList;
+				selectedPool = ssrPool;
 				getRarity = "ssr";
 				ssrCount++;
 			}else if(randPercent <= ssrPercent+srPercent){
-				selectedPool = srList;
+				selectedPool = srPool;
 				getRarity = "sr";
 				srCount++;
 			}else if(randPercent <= ssrPercent+srPercent+rPercent){
-				selectedPool = rList;
+				selectedPool = rPool;
 				getRarity = "r";
 				rCount++;
 			}else{
-				selectedPool = nList;
+				selectedPool = nPool;
 				getRarity = "n";
 				nCount++;
 			}
@@ -456,10 +519,12 @@ $(function(){
 				getChar = selectedPool[pick];
 
 				// 픽업캐릭터 겹치면 다시뽑기
-				while(getChar.num == pickupChar){
-					pick = Math.floor(Math.random()*selectedPool.length);
-					getChar = selectedPool[pick];
-				};
+				if(hasPickup){
+					while(getChar.num == pickupChar){
+						pick = Math.floor(Math.random()*selectedPool.length);
+						getChar = selectedPool[pick];
+					};
+				}
 				
 				// 천장 횟수 갱신
 				if(hasPickup){
