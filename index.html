@@ -66,87 +66,23 @@ tr, td, th {padding: 0;border: 0;}
 		</div>
 		
 		<div class="btn-group hire-type" role="group" aria-label="test">
-			<!--<input type="radio" class="btn-check" name="hire-type-radio" id="knight-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="knight-hire">리플레이서 나이트 픽업 채용</label>-->
-			<!--<input type="radio" class="btn-check" name="hire-type-radio" id="seraph-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="seraph-hire">리플레이서 나이트 픽업 채용</label>-->
-
-
-			<input type="radio" class="btn-check" name="hire-type-radio" id="rita-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="rita-hire">리타 특별채용</label>
-			<!--<input type="radio" class="btn-check" name="hire-type-radio" id="king-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="king-hire">리플레이서 킹 특별채용</label>-->
-
-			<!--<input type="radio" class="btn-check" name="hire-type-radio" id="hana-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="hana-hire">김하나 특별채용</label> -->
-
-			<!--<input type="radio" class="btn-check" name="hire-type-radio" id="harap-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="harap-hire">하랍 픽업 채용</label> -->
 
 			<div class="btn-group" role="group">
 				<button id="hidden-hire-group" type="button" class="btn dropdown-toggle btn-outline-primary" data-bs-toggle="dropdown" aria-expanded="false">기밀 채용</button>
 				<ul class="dropdown-menu hidden-hire-menu" aria-labelledby="btnGroupDrop1">
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">이볼브 원</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">에이미 퍼스트윙</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">미니스트라</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">리플레이서 킹</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">리플레이서 퀸</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">얼터그레시브 서윤</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">육익 나유빈</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">솔라 코덱스 유나 스프링필드</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">에이스 오브 윙즈 이수연</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">타입 : 펜릴 유미나</label>
-					</li>
-					<li>
-						<input type="radio" class="btn-check dropdown-item" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-						<label for="hidden-hire">타입 : 지크프리트 힐데</label>
-					</li>
+
 				</ul>
 			</div>
-
-			<!-- <input type="radio" class="btn-check" name="hire-type-radio" id="hidden-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="hidden-hire">기밀 채용</label> -->
-		
-			<!-- <input type="radio" class="btn-check" name="hire-type-radio" id="1staniv-hire" autocomplete="off">
-			<label class="btn btn-outline-primary" for="1staniv-hire">1주년 기념 채용</label> -->
 			
-			<input type="radio" class="btn-check" name="hire-type-radio" id="operator-hire" autocomplete="off">
+			<input type="radio" class="btn-check" name="hire-type-radio" id="operator-hire" autocomplete="off" hireType="operator">
 			<label class="btn btn-outline-primary" for="operator-hire">오퍼레이터 수시채용</label>
 			
-			<input type="radio" class="btn-check" name="hire-type-radio" id="always-hire" autocomplete="off">
+			<input type="radio" class="btn-check" name="hire-type-radio" id="always-hire" autocomplete="off" hireType="always">
 			<label class="btn btn-outline-primary" for="always-hire">수시채용</label>	
 		</div>
 		
 		<div class="hire-description">
+			<input type="hidden" id="nowPickupNum"/>
 			<p class="hire-percent"></p>
 			<p class="hire-term"></p>
 			<br>

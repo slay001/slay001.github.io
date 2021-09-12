@@ -1,0 +1,68 @@
+{
+	"hiddenHire" : [
+		{
+			"id":1,
+			"pickupName":"타입 : 지크프리트 힐데",
+			"pickupNum":"123"
+		},{
+			"id":2,
+			"pickupName":"타입 : 펜릴 유미나",
+			"pickupNum":"127"
+		},{
+			"id":3,
+			"pickupName":"에이스 오브 윙즈 이수연",
+			"pickupNum":"131"
+		},{
+			"id":4,
+			"pickupName":"솔라 코덱스 유나 스프링필드",
+			"pickupNum":"133"
+		},{
+			"id":5,
+			"pickupName":"육익 나유빈",
+			"pickupNum":"134"
+		},{
+			"id":6,
+			"pickupName":"얼터그레시브 서윤",
+			"pickupNum":"142"
+		},{
+			"id":7,
+			"pickupName":"리플레이서 킹",
+			"pickupNum":"146"
+		},{
+			"id":8,
+			"pickupName":"리플레이서 퀸",
+			"pickupNum":"147"
+		},{
+			"id":9,
+			"pickupName":"미니스트라",
+			"pickupNum":"153"
+		},{
+			"id":9,
+			"pickupName":"에이미 퍼스트윙",
+			"pickupNum":"159"
+		},{
+			"id":10,
+			"pickupName":"이볼브 원",
+			"pickupNum":"168"
+		},{
+			"id":11,
+			"pickupName":"아라한 주시윤",
+			"pickupNum":"172"
+		}
+	],
+	"pickupHire" : [
+		{
+			"id":1,
+			"pickupName":"옌 싱 란체스터",
+			"pickupNum":"125"
+		},{
+			"id":2,
+			"pickupName":"이디스 트윈즈",
+			"pickupNum":"126"
+		},{
+			"id":3,
+			"pickupName":"미카★스타",
+			"pickupNum":"160"
+		}
+	]
+}
